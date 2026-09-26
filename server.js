@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 require('dotenv').config();
 
 const app = express();
@@ -21,19 +21,10 @@ const pool = mysql.createPool({
     queueLimit: 0
 });
 
-// Nodemailer transporter — sends notification emails via Gmail
-// Explicit host/port + family:4 forces IPv4, which avoids SMTP connection
-// timeouts some hosts (like Railway) hit over IPv6 when using the 'gmail' shortcut.
-const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    family: 4,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
+// Resend — sends notification emails over HTTPS (port 443).
+// Railway blocks outbound SMTP ports (465/587), so a raw SMTP transporter
+// (Gmail/Nodemailer) times out there. Resend's API avoids that entirely.
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post('/api/contact', (req, res) => {
     const { name, email, message } = req.body;
@@ -44,7 +35,7 @@ app.post('/api/contact', (req, res) => {
 
     const sql = 'INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)';
 
-    pool.execute(sql, [name, email, message], (err, result) => {
+    pool.execute(sql, [name, email, message], async (err, result) => {
         if (err) {
             console.error('Database Error:', err);
             return res.status(500).json({ message: 'Database එකට එකතු කිරීම අසාර්ථකයි' });
@@ -54,21 +45,23 @@ app.post('/api/contact', (req, res) => {
         res.status(200).json({ message: 'පණිවිඩය සාර්ථකව යවන ලදී!' });
 
         // Send email notification (fire-and-forget; doesn't block the response)
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER,
-            replyTo: email,
-            subject: `New Portfolio Message from ${name}`,
-            text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-        };
+        try {
+            const { data, error } = await resend.emails.send({
+                from: 'Portfolio Contact <onboarding@resend.dev>',
+                to: process.env.NOTIFY_EMAIL,
+                reply_to: email,
+                subject: `New Portfolio Message from ${name}`,
+                text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            });
 
-        transporter.sendMail(mailOptions, (mailErr, info) => {
-            if (mailErr) {
-                console.error('Email Error:', mailErr);
+            if (error) {
+                console.error('Email Error:', error);
             } else {
-                console.log('Email sent:', info.response);
+                console.log('Email sent:', data.id);
             }
-        });
+        } catch (mailErr) {
+            console.error('Email Error:', mailErr);
+        }
     });
 });
 
