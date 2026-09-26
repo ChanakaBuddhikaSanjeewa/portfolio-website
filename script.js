@@ -125,7 +125,7 @@ function animateCounter(el) {
 // ============================================
 // CONTACT FORM — Express Node.js Backend API
 // ============================================
-const API_URL = 'http://localhost:8080/api/contact';
+const API_URL = 'https://portfolio-website-production-05b8.up.railway.app/api/contact';
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 
