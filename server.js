@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
@@ -20,6 +21,15 @@ const pool = mysql.createPool({
     queueLimit: 0
 });
 
+// Nodemailer transporter — sends notification emails via Gmail
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
+
 app.post('/api/contact', (req, res) => {
     const { name, email, message } = req.body;
 
@@ -35,7 +45,25 @@ app.post('/api/contact', (req, res) => {
             return res.status(500).json({ message: 'Database එකට එකතු කිරීම අසාර්ථකයි' });
         }
 
+        // Respond to the user immediately — DB save succeeded either way
         res.status(200).json({ message: 'පණිවිඩය සාර්ථකව යවන ලදී!' });
+
+        // Send email notification (fire-and-forget; doesn't block the response)
+        const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER,
+            replyTo: email,
+            subject: `New Portfolio Message from ${name}`,
+            text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        };
+
+        transporter.sendMail(mailOptions, (mailErr, info) => {
+            if (mailErr) {
+                console.error('Email Error:', mailErr);
+            } else {
+                console.log('Email sent:', info.response);
+            }
+        });
     });
 });
 
