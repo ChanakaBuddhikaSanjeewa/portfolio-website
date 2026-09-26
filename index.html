@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chanaka Sanjeewa — Software Developer</title>
+  <meta name="description"
+    content="Chanaka Sanjeewa — IT undergraduate and software developer building web, data and cybersecurity-minded solutions.">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23e8b64a%22>C</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="grain"></div>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo">C<span>B</span>S<span class="dot">.</span></a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" class="nav__link">About</a>
+      <a href="#skills" class="nav__link">Skills</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#certs" class="nav__link">Certs</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn--ghost nav__cta">Let's talk <span class="arrow">↗</span></a>
+
+    <button class="nav__burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero__video-wrap">
+      <video class="hero__video" autoplay muted loop playsinline poster="">
+        <source src="hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero__vignette"></div>
+      <div class="hero__spotlight" id="spotlight"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow reveal-up"><span class="eyebrow__bar"></span><span id="typedRole"></span><span
+          class="caret">|</span></p>
+
+      <h1 class="hero__title reveal-up" style="--d:0.05s">
+        I ENGINEER<br>
+        <span class="gold-text">DIGITAL SOLUTIONS</span><span class="spark">◆</span>
+      </h1>
+
+      <p class="hero__lede reveal-up" style="--d:0.15s">
+        BSc in IT undergraduate from Sri Lanka, turning coursework, curiosity and late&#8209;night
+        debugging into web apps, data tools and secure systems.
+      </p>
+
+      <div class="hero__cta reveal-up" style="--d:0.25s">
+        <a href="#projects" class="btn btn--solid">Explore my work <span class="arrow">→</span></a>
+        <a href="#contact" class="btn btn--outline">Get in touch</a>
+      </div>
+
+      <div class="hero__meta reveal-up" style="--d:0.35s">
+        <div class="hero__meta-item">
+          <span class="mono">// based in</span>
+          <strong>Sri Lanka</strong>
+        </div>
+        <div class="hero__meta-item">
+          <span class="mono">// focus</span>
+          <strong>Web · Data · Security</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__quote">
+      <p>&ldquo;Code is my craft.<br>Curiosity is my compass.&rdquo;</p>
+      <span>— C. Sanjeewa</span>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <span></span>
+      <em>Scroll</em>
+    </a>
+  </section>
+
+  <main>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <p class="section__eyebrow"><span class="mono">About</span></p>
+        <h2 class="section__title">Behind the code.</h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__frame reveal">
+          <video class="about__video" autoplay muted loop playsinline>
+            <source src="hero.mp4" type="video/mp4">
+          </video>
+          <div class="about__frame-tag mono">CBS // 2026</div>
+        </div>
+
+        <div class="about__text reveal">
+          <p>
+            I'm Chanaka Sanjeewa, a Computer Science &amp; Information Technology undergraduate
+            based in Sri Lanka, currently reading for a <strong>BSc in Information Technology</strong>
+            at the Open University of Sri Lanka. I build with Python, Java, C++, SQL and the
+            core web stack, and I'm equally comfortable shaping a database schema, training a
+            small ML model or wiring up a front end.
+          </p>
+          <p>
+            Lately I've been pulled toward <strong>cybersecurity</strong> — understanding not just
+            how systems are built, but how they fail and how to defend them. Outside class,
+            I keep learning through structured courses in data science, cloud and AI, and I
+            like finishing what I start: certificates on the wall are nice, shipped projects
+            are better.
+          </p>
+
+          <div class="about__facts">
+            <div class="fact">
+              <span class="fact__row"><span class="fact__num" data-count="10">0</span><span
+                  class="gold-text">+</span></span>
+              <span class="fact__label mono">certifications</span>
+            </div>
+            <div class="fact">
+              <span class="fact__row"><span class="fact__num" data-count="4">0</span></span>
+              <span class="fact__label mono">projects built</span>
+            </div>
+            <div class="fact">
+              <span class="fact__row"><span class="fact__num" data-count="2">0</span></span>
+              <span class="fact__label mono">languages spoken</span>
+            </div>
+          </div>
+
+          <div class="about__timeline">
+            <div class="tl-item">
+              <span class="tl-year mono">2024 — Present</span>
+              <span class="tl-role">BSc Information Technology, Open University of Sri Lanka</span>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year mono">2026 — Present</span>
+              <span class="tl-role">Full-Stack Software Engineer track, SYKREK Academy</span>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year mono">Ongoing</span>
+              <span class="tl-role">Python &amp; Web Development, University of Moratuwa</span>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn--outline">Download résumé <span class="arrow">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section section--tint" id="skills">
+      <div class="section__head reveal">
+        <p class="section__eyebrow"><span class="mono">Skills</span></p>
+        <h2 class="section__title">Tools I reach for.</h2>
+      </div>
+
+      <div class="skills__grid">
+        <div class="skill-card reveal">
+          <div class="skill-card__top">
+            <span class="mono skill-card__kicker">languages</span>
+            <span class="skill-card__badge mono">core</span>
+          </div>
+          <h3>Programming</h3>
+          <p>Comfortable moving between paradigms — procedural, OOP and logic programming.</p>
+          <div class="tags">
+            <span>Python</span><span>Java</span><span>C++</span><span>SWI-Prolog</span><span>JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__top">
+            <span class="mono skill-card__kicker">web</span>
+            <span class="skill-card__badge mono">build</span>
+          </div>
+          <h3>Web Development</h3>
+          <p>From static pages to interactive, animated front ends and simple backends.</p>
+          <div class="tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive UI</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__top">
+            <span class="mono skill-card__kicker">data</span>
+            <span class="skill-card__badge mono">analyze</span>
+          </div>
+          <h3>Data &amp; Databases</h3>
+          <p>Designing schemas and turning raw tables into decisions and dashboards.</p>
+          <div class="tags">
+            <span>SQL</span><span>MySQL</span><span>Data Analytics</span><span>Data
+              Visualization</span><span>Excel</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__top">
+            <span class="mono skill-card__kicker">emerging</span>
+            <span class="skill-card__badge mono">explore</span>
+          </div>
+          <h3>Cloud, AI &amp; Security</h3>
+          <p>Certified on Oracle Cloud AI foundations, with a growing focus on cybersecurity.</p>
+          <div class="tags">
+            <span>Machine Learning</span><span>Oracle Cloud AI</span><span>Cybersecurity</span><span>Cloud Basics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-skills reveal">
+        <span class="mono soft-skills__label">// also bring to the table</span>
+        <div class="marquee">
+          <div class="marquee__track">
+            <span>Leadership &amp; Teamwork</span><span>·</span>
+            <span>Communication</span><span>·</span>
+            <span>Problem Solving</span><span>·</span>
+            <span>Time Management</span><span>·</span>
+            <span>Team Coordination</span><span>·</span>
+            <span>Adaptability</span><span>·</span>
+            <span>Attention to Detail</span><span>·</span>
+            <span>Leadership &amp; Teamwork</span><span>·</span>
+            <span>Communication</span><span>·</span>
+            <span>Problem Solving</span><span>·</span>
+            <span>Time Management</span><span>·</span>
+            <span>Team Coordination</span><span>·</span>
+            <span>Adaptability</span><span>·</span>
+            <span>Attention to Detail</span><span>·</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <div class="section__head reveal">
+        <p class="section__eyebrow"><span class="mono">Projects</span></p>
+        <h2 class="section__title">Things I've built.</h2>
+      </div>
+
+      <div class="projects__list">
+
+        <article class="project reveal">
+          <div class="project__index mono">01</div>
+          <div class="project__body">
+            <div class="project__top">
+              <h3>Smart Route Finder for Daily Commuters</h3>
+              <span class="mono project__tag">web app</span>
+            </div>
+            <p>
+              A route-planning web app for everyday commuters, built in SWI-Prolog with
+              Nominatim and OSRM handling geocoding and routing, and a Leaflet front end
+              for the interactive map. Packaged with Docker and deployed on Render.
+            </p>
+            <div class="tags">
+              <span>SWI-Prolog</span><span>OSRM</span><span>Nominatim</span><span>Leaflet</span><span>Docker</span><span>Render</span>
+            </div>
+          </div>
+          <a href="https://github.com/ChanakaBuddhikSanjeewa" target="_blank" rel="noopener"
+            class="project__link mono">Source code ↗</a>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__index mono">02</div>
+          <div class="project__body">
+            <div class="project__top">
+              <h3>Vista Motors Chatbot</h3>
+              <span class="mono project__tag">group project</span>
+            </div>
+            <p>
+              A knowledge-based chatbot for a motorcycle showroom, built and presented with
+              Group 56 using SWI-Prolog for the reasoning layer — from rule design through
+              live testing and demo.
+            </p>
+            <div class="tags">
+              <span>SWI-Prolog</span><span>Knowledge Representation</span><span>Chatbot</span>
+            </div>
+          </div>
+          <a href="https://github.com/ChanakaBuddhikSanjeewa" target="_blank" rel="noopener"
+            class="project__link mono">Source code ↗</a>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__index mono">03</div>
+          <div class="project__body">
+            <div class="project__top">
+              <h3>ASJ (Pvt) Ltd — Website Updates</h3>
+              <span class="mono project__tag">client work</span>
+            </div>
+            <p>
+              Hands-on modifications and fixes to a live company website — layout,
+              styling and small interactive features shipped with HTML, CSS and
+              JavaScript.
+            </p>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+          <a href="https://github.com/ChanakaBuddhikSanjeewa" target="_blank" rel="noopener"
+            class="project__link mono">Source code ↗</a>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__index mono">04</div>
+          <div class="project__body">
+            <div class="project__top">
+              <h3>Personal Portfolio — v1</h3>
+              <span class="mono project__tag">personal</span>
+            </div>
+            <p>
+              An earlier single-file portfolio site with trilingual support and a
+              dark/light theme toggle, animated from top to bottom — the predecessor
+              to the site you're looking at right now.
+            </p>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>i18n</span>
+            </div>
+          </div>
+          <a href="https://github.com/ChanakaBuddhikSanjeewa" target="_blank" rel="noopener"
+            class="project__link mono">Source code ↗</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section class="section section--tint" id="certs">
+      <div class="section__head reveal">
+        <p class="section__eyebrow"><span class="mono">Certifications</span></p>
+        <h2 class="section__title">Always mid-course.</h2>
+      </div>
+
+      <div class="certs__grid">
+        <div class="cert reveal">
+          <span class="cert__date mono">Oct 2025 – Oct 2027</span>
+          <h4>OCI 2025 Certified AI Foundations Associate</h4>
+          <span class="cert__issuer">Oracle University</span>
+        </div>
+        <div class="cert reveal">
+          <span class="cert__date mono">Dec 2025</span>
+          <h4>Python 101 for Data Science</h4>
+          <span class="cert__issuer">IBM · Cognitive Class</span>
+        </div>
+        <div class="cert reveal">
+          <span class="cert__date mono">Dec 2025</span>
+          <h4>Data Visualization with Python</h4>
+          <span class="cert__issuer">IBM · Cognitive Class</span>
+        </div>
+        <div class="cert reveal">
+          <span class="cert__date mono">Dec 2025</span>
+          <h4>SQL and Relational Databases 101</h4>
+          <span class="cert__issuer">IBM · Cognitive Class</span>
+        </div>
+        <div class="cert reveal">
+          <span class="cert__date mono">Dec 2025</span>
+          <h4>SQL Analytics &amp; BI on Databricks</h4>
+          <span class="cert__issuer">Databricks · Simplilearn SkillUP</span>
+        </div>
+        <div class="cert reveal">
+          <span class="cert__date mono">Jan 2026</span>
+          <h4>Excel Dashboard for Beginners</h4>
+          <span class="cert__issuer">Microsoft · Simplilearn SkillUP</span>
+        </div>
+        <div class="cert reveal">
+          <span class="cert__date mono">Dec 2025</span>
+          <h4>Student Grade Management System in C++</h4>
+          <span class="cert__issuer">Great Learning</span>
+        </div>
+        <div class="cert reveal">
+          <span class="cert__date mono">Completed</span>
+          <h4>Introduction to Java</h4>
+          <span class="cert__issuer">SoloLearn</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+      <div class="contact__grid">
+        <div class="contact__left reveal">
+          <p class="section__eyebrow"><span class="mono">Contact</span></p>
+          <h2 class="section__title">Let's build<br>something.</h2>
+          <p class="contact__lede">
+            Open to internships, junior developer roles and collaborative projects.
+            Reach out directly, or send a message through the form.
+          </p>
+
+          <div class="contact__block">
+            <span class="mono">// email</span>
+            <a href="mailto:chanakabuddhikasanjeewa@gmail.com">chanakabuddhikasanjeewa@gmail.com</a>
+          </div>
+          <div class="contact__block">
+            <span class="mono">// phone</span>
+            <a href="tel:+94719193689">+94 71 919 3689</a>
+          </div>
+          <div class="contact__block">
+            <span class="mono">// education</span>
+            <span>BSc IT (Undergraduate) — Open University of Sri Lanka</span>
+          </div>
+
+          <div class="contact__socials">
+            <a href="https://github.com/ChanakaBuddhikSanjeewa" target="_blank" rel="noopener"
+              class="social-pill mono">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/cb-sanjeewa-174085344/" target="_blank" rel="noopener"
+              class="social-pill mono">LinkedIn ↗</a>
+            <a href="https://wa.me/94719193689" target="_blank" rel="noopener" class="social-pill mono">WhatsApp ↗</a>
+          </div>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm">
+          <div class="form-row">
+            <label class="mono" for="name">// sender</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-row">
+            <label class="mono" for="email">// channel</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-row">
+            <label class="mono" for="message">// message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity or project..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn btn--solid form-submit">Send message <span class="arrow">→</span></button>
+          <p class="form-note mono" id="formNote">Opens your email app, addressed to Chanaka.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="mono">Portfolio // Edition 2026</span>
+    <span class="mono">© 2026 Chanaka Sanjeewa</span>
+    <a href="#top" class="footer__top mono">Back to top ↑</a>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/94719193689" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-fab__ring"></span>
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path
+        d="M16.004 3C9.377 3 4 8.373 4 15c0 2.31.64 4.47 1.75 6.31L4 29l7.86-1.71A11.9 11.9 0 0 0 16.004 27C22.63 27 28 21.63 28 15S22.63 3 16.004 3Zm0 21.8c-2.02 0-3.9-.56-5.5-1.53l-.39-.23-4.66 1.02 1.01-4.53-.25-.4A9.73 9.73 0 0 1 6.2 15c0-5.4 4.4-9.8 9.8-9.8 5.4 0 9.8 4.4 9.8 9.8 0 5.4-4.4 9.8-9.8 9.8Zm5.4-7.34c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z" />
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
