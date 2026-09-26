@@ -22,8 +22,13 @@ const pool = mysql.createPool({
 });
 
 // Nodemailer transporter — sends notification emails via Gmail
+// Explicit host/port + family:4 forces IPv4, which avoids SMTP connection
+// timeouts some hosts (like Railway) hit over IPv6 when using the 'gmail' shortcut.
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    family: 4,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
